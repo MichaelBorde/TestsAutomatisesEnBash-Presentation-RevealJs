@@ -25,6 +25,12 @@
             document.write('<link rel="stylesheet" href="css/print/' + ( window.location.search.match(/print-pdf/gi) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">');
         </script>
 
+        <style type="text/css">
+            li.important {
+                text-decoration: underline;
+            }
+        </style>
+
         <!--[if lt IE 9]>
         <script src="lib/js/html5shiv.js"></script><![endif]-->
     </head>
@@ -174,9 +180,144 @@
                     </section>
 
                     <section>
-                        <img width="60%" height="60%" src="images/orly-owl.jpg" alt="Orly owl"/>
+                        <h2>Les objectifs de l'api</h2>
+                        <ul>
+                            <li>Ressembler à xUnit,</li>
+                            <li>Etre en français,</li>
+                            <li>Etre compatible avec l'IC,</li>
+                            <li>Favoriser TDD,</li>
+                            <li>Respecter la notion de tests unitaires.</li>
+                        </ul>
                     </section>
 
+                    <section>
+                        <h2>Make them <strong>first</strong></h2>
+                        <ul>
+                            <li><strong>F</strong>ast</li>
+                            <li class="important"><strong>I</strong>solated</li>
+                            <li class="important"><strong>R</strong>epeatable</li>
+                            <li class="important"><strong>S</strong>elf-verifying</li>
+                            <li><strong>T</strong>imely</li>
+                        </ul>
+                    </section>
+                </section>
+
+                <section>
+                    <section>
+                        <h2>Et donc?</h2>
+                    </section>
+
+                    <section>
+                        <h2>L'exécuteur de test</h2>
+                    </section>
+
+                    <section>
+                        <h2>Exécuter tous les fichiers de test</h2>
+                        <pre><code data-trim>
+function executeur_executeLesFichiersDeTestDansLeRepertoire() {
+    local repertoire=${1}
+    _initialiseLExecutionDesTests
+    _executeTousFichiersDeTest "${repertoire}" *Test.sh
+    _afficheLeResultatDesTests
+    _retourneUnCodeEnFonctionDuResultatDesTests
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Exécuter un fichier de test</h2>
+                        <pre><code data-trim>
+function _executeLeFichierDeTest() {
+    local fichier=${1}
+    printf "[Fichier] ${fichier}\n"
+    source "${fichier}"
+    _executeLeSetupGlobalDuFichier "${fichier}"
+    _executeLesTestsDuFichier "${fichier}"
+    _executeLeTeardownGlobalDuFichier "${fichier}"
+    printf "\n"
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Exécuter une fonction de test</h2>
+                        <pre><code data-trim>
+function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
+    local fonctionTest=${1}
+    local fichier=${2}
+    echo "[Test] ${fonctionTest}"
+    ( _executeLeSetupDuFichier "${fichier}" &&
+    systeme_evalueDansUnSousShell ${fonctionTest} &&
+    _executeLeTeardownDuFichier "${fichier}" )
+    _analyseLExecutionDuTest ${fonctionTest} ${?}
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Les affirmations</h2>
+                    </section>
+
+                    <section>
+                        <h2>Affirmer l'égalité</h2>
+                        <pre><code data-trim>
+function affirmation_affirmeEgalite() {
+    local attendu=${1}
+    local obtenu=${2}
+    if [[ "${attendu}" != "${obtenu}" ]]; then
+        _affirmationEnErreur "Obtenu : <${obtenu}>, attendu : <${attendu}>."
+    fi
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Affirmer le succés</h2>
+                        <pre><code data-trim>
+function affirmation_affirmeSucces() {
+    systeme_evalueDansUnSousShell ${@}
+    if (( ${?} != ${SUCCES} )); then
+        _affirmationEnErreur "La commande a échoué au lieu de réussir."
+    fi
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Quelques exemples</h2>
+                    </section>
+
+                    <section>
+                        <h2>Un test unitaire</h2>
+                        <pre><code data-trim>
+function recupereBienLaVersionDunPom() {
+    local pom="${_ressources}/pom_1.0-SNAPSHOT.xml"
+
+    local version=$(maven_recupereLaVersionDuPom "${pom}")
+
+    affirmation_affirmeEgalite "1.0-SNAPSHOT" "${version}"
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>Un test d'intégration</h2>
+                        <pre><code data-trim>
+function ilEstPossibleDeCheckouterUnSeulEntrepot() {
+    entrepot_cloneLaBrancheDeLEntrepot "integration" "module-a"
+
+    source "${REPERTOIRE_SCRIPT}/checkout.sh" "master" "module-a"
+
+    local branche=$(_recupereLaBrancheCouranteDeLEntrepot "module-a")
+    affirmation_affirmeEgalite "master" "${branche}"
+}
+                        </code></pre>
+                    </section>
+
+                    <section>
+                        <h2>La sortie console</h2>
+                        <p>TODO</p>
+                    </section>
                 </section>
             </div>
 
