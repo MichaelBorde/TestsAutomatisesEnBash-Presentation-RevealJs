@@ -265,7 +265,7 @@ function affirmation_affirmeEgalite() {
     local attendu=${1}
     local obtenu=${2}
     if [[ "${attendu}" != "${obtenu}" ]]; then
-        _affirmationEnErreur "Obtenu : <${obtenu}>, attendu : <${attendu}>."
+        _affirmationEnErreur "Obtenu : <${obtenu}>, attendu : <${attendu}>"
     fi
 }
                         </code></pre>
@@ -315,8 +315,13 @@ function ilEstPossibleDeCheckouterUnSeulEntrepot() {
                     </section>
 
                     <section>
-                        <h2>La sortie console</h2>
-                        <p>TODO</p>
+                        <figure>
+                            <img width="100%" height="100%" src="images/resultat-tests.png"
+                                 alt="Résultat tests"/>
+                            <figcaption>
+                                Exemple de sortie console
+                            </figcaption>
+                        </figure>
                     </section>
                 </section>
             </div>
