@@ -54,165 +54,156 @@
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Le contexte</h2>
-                    </section>
-
-                    <section>
-                        <p>Et si nous automatisions les opérations répétitives et sensibles ?</p>
-                    </section>
-
-                    <section>
-                        <h2>Un outil simple : Bash</h2>
-                        <img width="60%" height="60%" src="images/cle-a-molette.jpg" alt="Clé à molette"/>
-                    </section>
-
-                    <section>
-                        <h2>3 fois rien finalement</h2>
-                        <ul>
-                            <li>Cloner des entrepôts</li>
-                            <li>Mettre à jour des sources</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2>Mais avec un peu d'imagination</h2>
-                        <ul>
-                            <li>Cloner des entrepôts</li>
-                            <li>Mettre à jour des sources</li>
-                            <li>Changer de branche</li>
-                            <li>Exécuter des commandes</li>
-                            <li>Créer des branches</li>
-                            <li>Supprimer des branches</li>
-                            <li>Importer dans Git</li>
-                            <li>Lister les entrepôts à fusionner</li>
-                            <li>Préparer la livraison des projets</li>
-                            <li>Réaliser la livraison des projets</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2>Et il y en a pour tout le monde</h2>
-                        <img width="60%" height="60%" src="images/equipe-developpement.jpg" alt="Equipe développement"/>
-
-                        <p>Développeurs, administrateurs, livreurs, managers</p>
-                    </section>
-
-                    <section>
-                        <h2>Dans des contextes multiples</h2>
-                        <img width="20%" height="20%" src="images/logo-cygwin.png" alt="Logo Cygwin"/> <img width="20%"
-                                                                                                            height="20%"
-                                                                                                            src="images/logo-jenkins.png"
-                                                                                                            alt="Logo Jenkins"/>
-
-                        <p class="fragment">avec un mode de tests manuels, mais chut!</p>
-                    </section>
-
-                    <section>
-                        <img width="60%" height="60%" src="images/panneau-stop.jpg" alt="Panneau stop"/>
-                    </section>
+                    <h2>Le contexte</h2>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Il faut tacler la complexité</h2>
-                    </section>
-
-                    <section>
-                        <p>Et si Bash était un langage de programmation ?</p>
-                    </section>
-
-                    <section>
-                        <h2>Les outils habituels</h2>
-                        <img width="20%" height="20%" src="images/livre-tdd-by-example.jpeg" alt="TDD By Example"/> <img
-                            width="20%" height="20%" src="images/livre-xp-explained.jpg" alt="XP Explained"/> <img
-                            width="20%" height="20%" src="images/livre-clean-code.jpg" alt="Clean Code"/>
-                    </section>
-
-                    <section>
-                        <p>Certains vont me dire :</p>
-                        <blockquote class="fragment">&ldquo;MER IL ET FOU&rdquo;</blockquote>
-                    </section>
+                    <p>Et si nous automatisions les opérations répétitives et sensibles ?</p>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Un peu de Clean Code</h2>
-                        <ul>
-                            <li>clone.sh</li>
-                            <li>pull.sh</li>
-                            <li>checkout.sh</li>
-                            <li>execute.sh</li>
-                            <li>creeLaBranche.sh</li>
-                            <li>supprimeLaBranche.sh</li>
-                            <li>importeDansGit.sh</li>
-                            <li>listeEntrepotsAFusionner.sh</li>
-                            <li>livre.sh</li>
-                        </ul>
-                        <ul class="fragment">
-                            <li>branche.sh</li>
-                            <li>configuration.sh*</li>
-                            <li>entrepot.sh</li>
-                            <li>git.sh</li>
-                            <li>livraison.sh</li>
-                            <li>maven.sh</li>
-                            <li>nettoyage.sh</li>
-                            <li>preparationLivraison.sh</li>
-                            <li>systeme.sh</li>
-                            <li>tag.sh</li>
-                        </ul>
-                    </section>
+                    <h2>Un outil simple : Bash</h2>
+                    <img width="60%" height="60%" src="images/cle-a-molette.jpg" alt="Clé à molette"/>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Un équivalent à JUnit?</h2>
-                        <img width="30%" height="30%" src="images/junit.jpg" alt="JUnit"/>
-                    </section>
-
-                    <section>
-                        <p>Bof...</p>
-                    </section>
-
-                    <section>
-                        <p>Je vais créer mon api de tests automatisés en Bash...</p>
-                        <img width="60%" height="60%" src="images/serious-cat.jpg" alt="Serious cat"/>
-                    </section>
-
-                    <section>
-                        <h2>Les objectifs de l'api</h2>
-                        <ul>
-                            <li>Ressembler à xUnit,</li>
-                            <li>Etre en français,</li>
-                            <li>Etre compatible avec l'IC,</li>
-                            <li>Favoriser TDD,</li>
-                            <li>Respecter la notion de tests unitaires.</li>
-                        </ul>
-                    </section>
-
-                    <section>
-                        <h2>Make them <strong>first</strong></h2>
-                        <ul>
-                            <li><strong>F</strong>ast</li>
-                            <li class="important"><strong>I</strong>solated</li>
-                            <li class="important"><strong>R</strong>epeatable</li>
-                            <li class="important"><strong>S</strong>elf-verifying</li>
-                            <li><strong>T</strong>imely</li>
-                        </ul>
-                    </section>
+                    <h2>3 fois rien finalement</h2>
+                    <ul>
+                        <li>Cloner des entrepôts,</li>
+                        <li>Mettre à jour des sources.</li>
+                    </ul>
                 </section>
 
                 <section>
-                    <section>
-                        <h2>Et donc?</h2>
-                    </section>
+                    <h2>Mais avec un peu d'imagination</h2>
+                    <ul>
+                        <li>Cloner des entrepôts,</li>
+                        <li>Mettre à jour des sources,</li>
+                        <li>Changer de branche,</li>
+                        <li>Exécuter des commandes,</li>
+                        <li>Créer des branches,</li>
+                        <li>Supprimer des branches,</li>
+                        <li>Importer dans Git,</li>
+                        <li>Lister les entrepôts à fusionner,</li>
+                        <li>Préparer la livraison des projets,</li>
+                        <li>Réaliser la livraison des projets.</li>
+                    </ul>
+                </section>
 
-                    <section>
-                        <h2>L'exécuteur de test</h2>
-                    </section>
+                <section>
+                    <h2>Et il y en a pour tout le monde</h2>
+                    <img width="60%" height="60%" src="images/equipe-developpement.jpg" alt="Equipe développement"/>
 
-                    <section>
-                        <h2>Exécuter tous les fichiers de test</h2>
+                    <p>Développeurs, administrateurs, livreurs, managers</p>
+                </section>
+
+                <section>
+                    <h2>Dans des contextes multiples</h2>
+                    <img width="20%" height="20%" src="images/logo-cygwin.png" alt="Logo Cygwin"/> <img width="20%"
+                                                                                                        height="20%"
+                                                                                                        src="images/logo-jenkins.png"
+                                                                                                        alt="Logo Jenkins"/>
+
+                    <p class="fragment">avec un mode de tests manuels, mais chut!</p>
+                </section>
+
+                <section>
+                    <img width="60%" height="60%" src="images/panneau-stop.jpg" alt="Panneau stop"/>
+                </section>
+
+                <section>
+                    <h2>Il faut tacler la complexité</h2>
+                </section>
+
+                <section>
+                    <p>Et si Bash était un langage de programmation ?</p>
+                </section>
+
+                <section>
+                    <h2>Les outils habituels</h2>
+                    <img width="20%" height="20%" src="images/livre-tdd-by-example.jpeg" alt="TDD By Example"/> <img
+                        width="20%" height="20%" src="images/livre-xp-explained.jpg" alt="XP Explained"/> <img
+                        width="20%" height="20%" src="images/livre-clean-code.jpg" alt="Clean Code"/>
+                </section>
+
+                <section>
+                    <p>Certains vont me dire :</p>
+                    <blockquote class="fragment">&ldquo;MER IL ET FOU&rdquo;</blockquote>
+                </section>
+
+                <section>
+                    <h2>Un peu de Clean Code</h2>
+                    <ul>
+                        <li>clone.sh,</li>
+                        <li>pull.sh,</li>
+                        <li>checkout.sh,</li>
+                        <li>execute.sh,</li>
+                        <li>creeLaBranche.sh,</li>
+                        <li>supprimeLaBranche.sh,</li>
+                        <li>importeDansGit.sh,</li>
+                        <li>listeEntrepotsAFusionner.sh,</li>
+                        <li>livre.sh.</li>
+                    </ul>
+                    <ul class="fragment">
+                        <li>branche.sh,</li>
+                        <li>configuration.sh*,</li>
+                        <li>entrepot.sh,</li>
+                        <li>git.sh,</li>
+                        <li>livraison.sh,</li>
+                        <li>maven.sh,</li>
+                        <li>nettoyage.sh,</li>
+                        <li>preparationLivraison.sh,</li>
+                        <li>systeme.sh,</li>
+                        <li>tag.sh.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Un équivalent à JUnit?</h2>
+                    <img width="30%" height="30%" src="images/junit.jpg" alt="JUnit"/>
+                </section>
+
+                <section>
+                    <p>Bof...</p>
+                </section>
+
+                <section>
+                    <p>Je vais créer mon api de tests automatisés en Bash...</p>
+                    <img width="60%" height="60%" src="images/serious-cat.jpg" alt="Serious cat"/>
+                </section>
+
+                <section>
+                    <h2>Les objectifs de l'api</h2>
+                    <ul>
+                        <li>Ressembler à xUnit,</li>
+                        <li>Etre en français,</li>
+                        <li>Etre compatible avec l'IC,</li>
+                        <li>Favoriser TDD,</li>
+                        <li>Respecter la notion de tests unitaires.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Make them <strong>first</strong></h2>
+                    <ul>
+                        <li><strong>F</strong>ast,</li>
+                        <li class="important"><strong>I</strong>solated,</li>
+                        <li class="important"><strong>R</strong>epeatable,</li>
+                        <li class="important"><strong>S</strong>elf-verifying,</li>
+                        <li><strong>T</strong>imely.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Et donc?</h2>
+                </section>
+
+                <section>
+                    <h2>L'exécuteur de test</h2>
+                </section>
+
+                <section>
+                    <h2>Exécuter tous les fichiers de test</h2>
                         <pre><code data-trim class="sh">
 function executeur_executeLesFichiersDeTestDansLeRepertoire() {
     local repertoire=${1}
@@ -222,10 +213,10 @@ function executeur_executeLesFichiersDeTestDansLeRepertoire() {
     _retourneUnCodeEnFonctionDuResultatDesTests
 }
                         </code></pre>
-                    </section>
+                </section>
 
-                    <section>
-                        <h2>Exécuter un fichier de test</h2>
+                <section>
+                    <h2>Exécuter un fichier de test</h2>
                         <pre><code data-trim class="sh">
 function _executeLeFichierDeTest() {
     local fichier=${1}
@@ -237,10 +228,10 @@ function _executeLeFichierDeTest() {
     printf "\n"
 }
                         </code></pre>
-                    </section>
+                </section>
 
-                    <section>
-                        <h2>Exécuter une fonction de test</h2>
+                <section>
+                    <h2>Exécuter une fonction de test</h2>
                         <pre><code data-trim class="sh">
 function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
     local fonctionTest=${1}
@@ -252,14 +243,14 @@ function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
     _analyseLExecutionDuTest ${fonctionTest} ${?}
 }
                         </code></pre>
-                    </section>
+                </section>
 
-                    <section>
-                        <h2>Les affirmations</h2>
-                    </section>
+                <section>
+                    <h2>Les affirmations</h2>
+                </section>
 
-                    <section>
-                        <h2>Affirmer l'égalité</h2>
+                <section>
+                    <h2>Affirmer l'égalité</h2>
                         <pre><code data-trim class="sh">
 function affirmation_affirmeEgalite() {
     local attendu=${1}
@@ -269,10 +260,10 @@ function affirmation_affirmeEgalite() {
     fi
 }
                         </code></pre>
-                    </section>
+                </section>
 
-                    <section>
-                        <h2>Affirmer le succés</h2>
+                <section>
+                    <h2>Affirmer le succés</h2>
                         <pre><code data-trim class="sh">
 function affirmation_affirmeSucces() {
     systeme_evalueDansUnSousShell ${@}
@@ -281,14 +272,14 @@ function affirmation_affirmeSucces() {
     fi
 }
                         </code></pre>
-                    </section>
+                </section>
 
-                    <section>
-                        <h2>Quelques exemples</h2>
-                    </section>
+                <section>
+                    <h2>Quelques exemples</h2>
+                </section>
 
-                    <section>
-                        <h2>Un test unitaire</h2>
+                <section>
+                    <h2>Un test unitaire</h2>
                         <pre><code data-trim class="sh">
 function recupereBienLaVersionDunPom() {
     local pom="${_ressources}/pom_1.0-SNAPSHOT.xml"
@@ -298,10 +289,10 @@ function recupereBienLaVersionDunPom() {
     affirmation_affirmeEgalite "1.0-SNAPSHOT" "${version}"
 }
                         </code></pre>
-                    </section>
+                </section>
 
-                    <section>
-                        <h2>Un test d'intégration</h2>
+                <section>
+                    <h2>Un test d'intégration</h2>
                         <pre><code data-trim class="sh">
 function ilEstPossibleDeCheckouterUnSeulEntrepot() {
     entrepot_cloneLaBrancheDeLEntrepot "integration" "module-a"
@@ -312,16 +303,15 @@ function ilEstPossibleDeCheckouterUnSeulEntrepot() {
     affirmation_affirmeEgalite "master" "${branche}"
 }
                         </code></pre>
-                    </section>
+                </section>
 
-                    <section>
-                        <figure>
-                            <img width="100%" height="100%" src="images/resultat-tests.png" alt="Résultat tests"/>
-                            <figcaption>
-                                Exemple de sortie console
-                            </figcaption>
-                        </figure>
-                    </section>
+                <section>
+                    <figure>
+                        <img width="100%" height="100%" src="images/resultat-tests.png" alt="Résultat tests"/>
+                        <figcaption>
+                            Exemple de sortie console
+                        </figcaption>
+                    </figure>
                 </section>
             </div>
 
@@ -338,13 +328,6 @@ function ilEstPossibleDeCheckouterUnSeulEntrepot() {
                 history: true,
                 center: true,
                 mouseWheel: true,
-
-                keyboard: {
-                    37: 'prev', // gauche
-                    38: null, // haut
-                    39: 'next', // droite
-                    40: null // bas
-                },
 
                 theme: Reveal.getQueryHash().theme || 'beige',
                 transition: Reveal.getQueryHash().transition || 'none',
