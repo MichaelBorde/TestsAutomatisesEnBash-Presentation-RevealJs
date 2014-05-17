@@ -46,18 +46,14 @@
                     <img width="100%" height="100%" src="images/ouverture-agile-france.jpg"
                          alt="Ouverture Agile France"/>
                 </section>
-                <section>
-                    <h1>#!</h1>
+                <!--<section>--><!--<h1>#!</h1>-->
 
-                    <h3>Tests automatisés en Bash</h3>
+                <!--<h3>Tests automatisés en Bash</h3>-->
 
-                    <p>
-                        <small><a href="https://twitter.com/michael_borde">Michael Borde</a> / <a
-                                href="http://www.arpinum.fr">www.arpinum.fr</a> / <a href="http://twitter.com/arpinum">@arpinum</a>
-                        </small>
-                    </p>
-                    <img width="10%" height="10%" src="images/logo-arpinum.png" alt="Arpinum"/>
-                </section>
+                <!--<p>--><!--<small><a href="https://twitter.com/michael_borde">Michael Borde</a> / <a-->
+                <!--href="http://www.arpinum.fr">www.arpinum.fr</a> / <a href="http://twitter.com/arpinum">@arpinum</a>-->
+                <!--</small>--><!--</p>-->
+                <!--<img width="10%" height="10%" src="images/logo-arpinum.png" alt="Arpinum"/>--><!--</section>-->
 
                 <section>
                     <h2>Le contexte</h2>
@@ -75,24 +71,26 @@
                 <section>
                     <h2>3 fois rien finalement</h2>
                     <ul>
-                        <li>Cloner des entrepôts,</li>
-                        <li>Mettre à jour des sources.</li>
+                        <li>Cloner des entrepôts</li>
+                        <li>Mettre à jour des sources</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>Mais avec un peu d'imagination</h2>
                     <ul>
-                        <li>Cloner des entrepôts,</li>
-                        <li>Mettre à jour des sources,</li>
-                        <li>Changer de branche,</li>
-                        <li>Exécuter des commandes,</li>
-                        <li>Créer des branches,</li>
-                        <li>Supprimer des branches,</li>
-                        <li>Importer dans Git,</li>
-                        <li>Lister les entrepôts à fusionner,</li>
-                        <li>Préparer la livraison des projets,</li>
-                        <li>Réaliser la livraison des projets.</li>
+                        <li>Cloner des entrepôts</li>
+                        <li>Mettre à jour les sources</li>
+                        <li>Changer de branche</li>
+                        <li>Exécuter des commandes</li>
+                        <li>Créer/supprimer des branches</li>
+                        <li>Créer/supprimer des jobs Jenkins</li>
+                        <li>Lancer des builds Jenkins</li>
+                        <li>Importer un nouvel entrepôt</li>
+                        <li>Lister les entrepôts à fusionner</li>
+                        <li>Préparer la livraison des projets</li>
+                        <li>Réaliser la livraison des projets</li>
+                        <li>..</li>
                     </ul>
                 </section>
 
@@ -109,8 +107,42 @@
                                                                                                         height="20%"
                                                                                                         src="images/logo-jenkins.png"
                                                                                                         alt="Logo Jenkins"/>
+                    <img width="20%" height="20%" src="images/logo-linux.png" alt="Logo Linux"/>
 
                     <p class="fragment">avec un mode de tests manuels, mais chut!</p>
+                </section>
+
+                <section>
+                    <h2>Les conseils de Google</h2>
+                    <blockquote>
+                        If you are writing a script that is more than 100 lines long, you should probably be writing it
+                        in Python instead.
+                    </blockquote>
+                </section>
+
+                <section>
+                    <p>En python!</p>
+                    <img width="60%" height="60%" src="images/dawson-triste.jpg" alt="Dawson triste"/>
+                    <figcaption>
+                        <small>© Toute la production de Dawson's Creek</small>
+                    </figcaption>
+                </section>
+
+                <section>
+                    <p>Eh oui, scripter en Bash c'est un peu...</p>
+                    <img width="20%" height="20%" src="images/dé.jpg" alt="Dé"/> <img width="20%" height="20%"
+                                                                                      src="images/stackoverflow.png"
+                                                                                      alt="Stackoverflow"/> <img
+                        width="20%" height="20%" src="images/necronomicon.jpg" alt="Necronomicon"/>
+                </section>
+
+                <section>
+                    <h2>Et pourtant</h2>
+
+                    <pre><code class="bash">
+find scripts -name '*.sh' | xargs wc -l
+                    </code></pre>
+                    <p> 6549 lignes de Bash \o/</p>
                 </section>
 
                 <section>
@@ -126,7 +158,7 @@
                 </section>
 
                 <section>
-                    <h2>Les outils habituels</h2>
+                    <h2>Mes outils habituels</h2>
                     <img width="20%" height="20%" src="images/livre-tdd-by-example.jpeg" alt="TDD By Example"/> <img
                         width="20%" height="20%" src="images/livre-xp-explained.jpg" alt="XP Explained"/> <img
                         width="20%" height="20%" src="images/livre-clean-code.jpg" alt="Clean Code"/>
@@ -139,28 +171,26 @@
 
                 <section>
                     <h2>Un peu de Clean Code</h2>
+
+                    <p>Des façades :</p>
                     <ul>
-                        <li>clone.sh,</li>
-                        <li>pull.sh,</li>
-                        <li>checkout.sh,</li>
-                        <li>execute.sh,</li>
-                        <li>creeLaBranche.sh,</li>
-                        <li>supprimeLaBranche.sh,</li>
-                        <li>importeDansGit.sh,</li>
-                        <li>listeEntrepotsAFusionner.sh,</li>
-                        <li>livre.sh.</li>
+                        <li>clone.sh</li>
+                        <li>creeLaBranche.sh</li>
+                        <li>importeDansGit.sh</li>
+                        <li>livre.sh</li>
+                        <li>...</li>
                     </ul>
-                    <ul class="fragment">
-                        <li>branche.sh,</li>
-                        <li>configuration.sh*,</li>
-                        <li>entrepot.sh,</li>
-                        <li>git.sh,</li>
-                        <li>livraison.sh,</li>
-                        <li>maven.sh,</li>
-                        <li>nettoyage.sh,</li>
-                        <li>preparationLivraison.sh,</li>
-                        <li>systeme.sh,</li>
-                        <li>tag.sh.</li>
+                </section>
+                <section>
+                    <h2>Un peu de Clean Code</h2>
+
+                    <p>Des modules :</p>
+                    <ul>
+                        <li>systeme.sh</li>
+                        <li>entrepot.sh</li>
+                        <li>livraison.sh</li>
+                        <li>maven.sh</li>
+                        <li>...</li>
                     </ul>
                 </section>
 
@@ -181,22 +211,22 @@
                 <section>
                     <h2>Les objectifs de l'api</h2>
                     <ul>
-                        <li>Ressembler à xUnit,</li>
-                        <li>Etre en français,</li>
-                        <li>Etre compatible avec l'IC,</li>
-                        <li>Favoriser TDD,</li>
-                        <li>Respecter la notion de tests unitaires.</li>
+                        <li>Ressembler à xUnit</li>
+                        <li>Etre en français</li>
+                        <li>Etre compatible avec l'IC</li>
+                        <li>Favoriser TDD</li>
+                        <li>Respecter la notion de tests unitaires</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>Make them <strong>first</strong></h2>
                     <ul>
-                        <li><strong>F</strong>ast,</li>
-                        <li class="important"><strong>I</strong>solated,</li>
-                        <li class="important"><strong>R</strong>epeatable,</li>
-                        <li class="important"><strong>S</strong>elf-verifying,</li>
-                        <li><strong>T</strong>imely.</li>
+                        <li><strong>F</strong>ast</li>
+                        <li class="important"><strong>I</strong>solated</li>
+                        <li class="important"><strong>R</strong>epeatable</li>
+                        <li class="important"><strong>S</strong>elf-verifying</li>
+                        <li><strong>T</strong>imely</li>
                     </ul>
                 </section>
 
@@ -210,9 +240,9 @@
 
                 <section>
                     <h2>Exécuter tous les fichiers de test</h2>
-                        <pre><code data-trim class="sh">
+                        <pre><code data-trim class="bash">
 function executeur_executeLesFichiersDeTestDansLeRepertoire() {
-    local repertoire=${1}
+    local repertoire=$1
     _initialiseLExecutionDesTests
     _executeTousFichiersDeTest "${repertoire}" *Test.sh
     _afficheLeResultatDesTests
@@ -223,9 +253,9 @@ function executeur_executeLesFichiersDeTestDansLeRepertoire() {
 
                 <section>
                     <h2>Exécuter un fichier de test</h2>
-                        <pre><code data-trim class="sh">
+                        <pre><code data-trim class="bash">
 function _executeLeFichierDeTest() {
-    local fichier=${1}
+    local fichier=$1
     printf "[Fichier] ${fichier}\n"
     source "${fichier}"
     _executeLeSetupGlobalDuFichier "${fichier}"
@@ -238,15 +268,15 @@ function _executeLeFichierDeTest() {
 
                 <section>
                     <h2>Exécuter une fonction de test</h2>
-                        <pre><code data-trim class="sh">
+                        <pre><code data-trim class="bash">
 function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
-    local fonctionTest=${1}
-    local fichier=${2}
+    local fonctionTest=$1
+    local fichier=$2
     echo "[Test] ${fonctionTest}"
     ( _executeLeSetupDuFichier "${fichier}" &&
     systeme_evalueDansUnSousShell ${fonctionTest} &&
     _executeLeTeardownDuFichier "${fichier}" )
-    _analyseLExecutionDuTest ${fonctionTest} ${?}
+    _analyseLExecutionDuTest ${fonctionTest} $?
 }
                         </code></pre>
                 </section>
@@ -257,10 +287,10 @@ function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
 
                 <section>
                     <h2>Affirmer l'égalité</h2>
-                        <pre><code data-trim class="sh">
+                        <pre><code data-trim class="bash">
 function affirmation_affirmeEgalite() {
-    local attendu=${1}
-    local obtenu=${2}
+    local attendu=$1
+    local obtenu=$2
     if [[ "${attendu}" != "${obtenu}" ]]; then
       _affirmationEnErreur "Obtenu : <${obtenu}>, attendu : <${attendu}>."
     fi
@@ -270,10 +300,10 @@ function affirmation_affirmeEgalite() {
 
                 <section>
                     <h2>Affirmer le succés</h2>
-                        <pre><code data-trim class="sh">
+                        <pre><code data-trim class="bash">
 function affirmation_affirmeSucces() {
-    systeme_evalueDansUnSousShell ${@}
-    if (( ${?} != ${SUCCES} )); then
+    systeme_evalueDansUnSousShell $@
+    if (( $? != ${SUCCES} )); then
         _affirmationEnErreur "La commande a échoué au lieu de réussir."
     fi
 }
@@ -286,7 +316,7 @@ function affirmation_affirmeSucces() {
 
                 <section>
                     <h2>Un test unitaire</h2>
-                        <pre><code data-trim class="sh">
+                        <pre><code data-trim class="bash">
 function recupereBienLaVersionDunPom() {
     local pom="${_ressources}/pom_1.0-SNAPSHOT.xml"
 
@@ -299,7 +329,7 @@ function recupereBienLaVersionDunPom() {
 
                 <section>
                     <h2>Un test d'intégration</h2>
-                        <pre><code data-trim class="sh">
+                        <pre><code data-trim class="bash">
 function ilEstPossibleDeCheckouterUnSeulEntrepot() {
     entrepot_cloneLaBrancheDeLEntrepot "integration" "module-a"
 
