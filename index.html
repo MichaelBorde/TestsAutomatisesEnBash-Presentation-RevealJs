@@ -137,7 +137,7 @@
                 </section>
 
                 <section>
-                    <h2>Et pourtant 4796 lignes de Bash \o/ </h2>
+                    <h2>Et pourtant 4796 lignes de Bash ! </h2>
                 </section>
 
                 <section>
@@ -153,7 +153,7 @@
                 </section>
 
                 <section>
-                    <h2>Mes outils habituels</h2>
+                    <h2>Les outils habituels</h2>
                     <img width="20%" height="20%" src="images/livre-tdd-by-example.jpeg" alt="TDD By Example"/> <img
                         width="20%" height="20%" src="images/livre-xp-explained.jpg" alt="XP Explained"/> <img
                         width="20%" height="20%" src="images/livre-clean-code.jpg" alt="Clean Code"/>
@@ -167,7 +167,6 @@
                 <section>
                     <h2>Un peu de Clean Code</h2>
 
-                    <p>Des façades :</p>
                     <ul>
                         <li>clone.sh</li>
                         <li>creeLaBranche.sh</li>
@@ -175,12 +174,8 @@
                         <li>livre.sh</li>
                         <li>...</li>
                     </ul>
-                </section>
-                <section>
-                    <h2>Un peu de Clean Code</h2>
 
-                    <p>Des modules :</p>
-                    <ul>
+                    <ul class="fragment">
                         <li>systeme.sh</li>
                         <li>entrepot.sh</li>
                         <li>livraison.sh</li>
@@ -251,29 +246,30 @@ function executeur_executeLesFichiersDeTestDansLeRepertoire() {
                         <pre><code data-trim class="bash">
 function _executeLeFichierDeTest() {
     local fichier=$1
-    printf "[Fichier] ${fichier}\n"
     source "${fichier}"
-    _executeLeSetupGlobalDuFichier "${fichier}"
-    _executeLesTestsDuFichier "${fichier}"
-    _executeLeTeardownGlobalDuFichier "${fichier}"
-    printf "\n"
+    local fonctions=($(_fonctionsPubliquesDansLeFichier "${fichier}"))
+    _executeFonctionSiPresente "avantTousLesTests" "${fonctions[@]}"
+    _executeTousLesTests "${fonctions[@]}"
+    _executeFonctionSiPresente "apresTousLesTests" "${fonctions[@]}"
 }
-                        </code></pre>
+                    </code></pre>
                 </section>
 
                 <section>
                     <h2>Exécuter une fonction de test</h2>
-                        <pre><code data-trim class="bash">
+
+                    <pre><code data-trim class="bash">
 function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
-    local fonctionTest=$1
-    local fichier=$2
-    echo "[Test] ${fonctionTest}"
-    ( _executeLeSetupDuFichier "${fichier}" &&
-    systeme_evalueDansUnSousShell ${fonctionTest} &&
-    _executeLeTeardownDuFichier "${fichier}" )
-    _analyseLExecutionDuTest ${fonctionTest} $?
+    local fonction=$1
+    shift 1
+    (
+        _executeFonctionSiPresente "avantChaqueTest" "$@" \
+        && ( ${fonction} ) \
+        && _executeFonctionSiPresente "apresChaqueTest" "$@"
+    )
+    _analyseLExecutionDuTest "${fonction}" $?
 }
-                        </code></pre>
+                    </code></pre>
                 </section>
 
                 <section>
@@ -297,8 +293,8 @@ function affirmation_affirmeEgalite() {
                     <h2>Affirmer le succés</h2>
                         <pre><code data-trim class="bash">
 function affirmation_affirmeSucces() {
-    systeme_evalueDansUnSousShell $@
-    if (( $? != ${SUCCES} )); then
+    ( $@ )
+    if (( $? != 0 )); then
         _affirmationEnErreur "La commande a échoué au lieu de réussir."
     fi
 }
@@ -325,12 +321,12 @@ function recupereBienLaVersionDunPom() {
                 <section>
                     <h2>Un test d'intégration</h2>
                         <pre><code data-trim class="bash">
-function ilEstPossibleDeCheckouterUnSeulEntrepot() {
+function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
     entrepot_cloneLaBrancheDeLEntrepot "integration" "module-a"
 
     source "${REPERTOIRE_SCRIPT}/checkout.sh" "master" "module-a"
 
-    local branche=$(_recupereLaBrancheCouranteDeLEntrepot "module-a")
+    local branche="$(_recupereLaBrancheCouranteDeLEntrepot "module-a")"
     affirmation_affirmeEgalite "master" "${branche}"
 }
                         </code></pre>
@@ -355,6 +351,15 @@ function ilEstPossibleDeCheckouterUnSeulEntrepot() {
                         <li><strong>Tests</strong> : 1671 (35%)</li>
                         <li><strong>API de tests</strong> : 328 (7%)</li>
                     </ul>
+                </section>
+
+                <section>
+                    <h2>Fin</h2>
+
+                    <p>Pour les curieux :</p>
+
+                    <p><a href="http://github.com/arpinum/shebang_unit" title="shebang_unit">http://github.com/arpinum/shebang_unit</a>
+                    </p>
                 </section>
             </div>
 
