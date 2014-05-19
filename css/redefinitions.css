@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-li.important {
-    text-decoration: underline;
+span.exclamation {
+    color: red;
 }
 
 .reveal section img {

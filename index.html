@@ -165,7 +165,11 @@
                 </section>
 
                 <section>
-                    <h2>Un peu de Clean Code</h2>
+                    <h2>Clean Code, concrètement?</h2>
+                </section>
+
+                <section>
+                    <h2>Une programmation modulaire</h2>
 
                     <ul>
                         <li>clone.sh</li>
@@ -213,9 +217,9 @@
                     <h2>Make them <strong>first</strong></h2>
                     <ul>
                         <li><strong>F</strong>ast</li>
-                        <li class="important"><strong>I</strong>solated</li>
-                        <li class="important"><strong>R</strong>epeatable</li>
-                        <li class="important"><strong>S</strong>elf-verifying</li>
+                        <li><strong>I</strong>solated <span class="exclamation">!</span></li>
+                        <li><strong>R</strong>epeatable <span class="exclamation">!</span></li>
+                        <li><strong>S</strong>elf-verifying <span class="exclamation">!</span></li>
                         <li><strong>T</strong>imely</li>
                     </ul>
                 </section>
@@ -234,7 +238,7 @@
 function executeur_executeLesFichiersDeTestDansLeRepertoire() {
     local repertoire=$1
     _initialiseLExecutionDesTests
-    _executeTousFichiersDeTest "${repertoire}" *Test.sh
+    _executeTousFichiersDeTest "${repertoire}" "*Test.sh"
     _afficheLeResultatDesTests
     _retourneUnCodeEnFonctionDuResultatDesTests
 }
@@ -273,7 +277,7 @@ function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
                 </section>
 
                 <section>
-                    <h2>Les affirmations</h2>
+                    <h2>Quelques affirmations</h2>
                 </section>
 
                 <section>
@@ -350,6 +354,16 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
                         <li><strong>Production</strong> : 2797 (58%)</li>
                         <li><strong>Tests</strong> : 1671 (35%)</li>
                         <li><strong>API de tests</strong> : 328 (7%)</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Et pour le fun</h2>
+
+                    <p>Nombre de tests (temps) :</p>
+                    <ul>
+                        <li><strong>Tests unitaires</strong> : 91 (13 s)</li>
+                        <li><strong>Tests d'intégration</strong> : 109 (10 min)</li>
                     </ul>
                 </section>
 
