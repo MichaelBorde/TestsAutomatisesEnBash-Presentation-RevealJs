@@ -47,8 +47,8 @@
 
                     <aside class="notes">
                         Bonjour à tous. Je suis Michael Borde, développeur passionné chez Arpinum. Je remercie
-                        l'organisation pour ce bel évènement et je tenais à vous dire que je suis très heureux d'être
-                        parmis vous. Je vais vous parler de mon hobby du moment : les tests automatisés en Bash.
+                        l'organisation pour ce bel évènement. Je vais vous parler de mon hobby du moment : les tests
+                        automatisés en Bash.
                     </aside>
                 </section>
                 <!--<section>--><!--<h1>#!</h1>-->
@@ -65,7 +65,7 @@
 
                     <aside class="notes">
                         Je travaille sur un plateau de développement et je suis en charge, avec mon équipe, d'améliorer
-                        le quotidien de tous nos fabricants.
+                        le quotidien de tous les fabricants.
                     </aside>
                 </section>
 
@@ -75,20 +75,25 @@
                     <div>
                         <img width="10%" height="10%" src="images/28-jours-plus-tard.jpg" alt="28 jours plus tard"/>
                     </div>
-
                     <ul>
                         <li>109 entrepôts</li>
                         <li>1812 commits</li>
                         <li>48 auteurs actifs</li>
                     </ul>
-
                     <aside class="notes">
                         Nous sommes suffisamment nombreux pour que ce travail soit aussi intéressant que compliqué.
                     </aside>
                 </section>
 
                 <section>
-                    <p>Et si nous automatisions les opérations répétitives et sensibles ?</p>
+                    <h2>Retournons quelques temps en arrière...</h2>
+                    <aside class="notes">
+                        Mais prenons la DeLorean et retournons quelques temps en arrière.
+                    </aside>
+                </section>
+
+                <section>
+                    <p>Et si nous automatisions les opérations répétitives et sensibles ?</p>
 
                     <aside class="notes">
                         Tout a commencé lorsque nous avons décidé d'automatiser certaines opérations répétitives et
@@ -154,8 +159,8 @@
 
                     <aside class="notes">
                         Ils sont utilisables sur un poste de développement Windows, un serveur Linux ou via un job
-                        Jenkins. Il y a même un mode test pour vérifier qu'on ne va pas déclencher l'enfer en situation
-                        réelle.
+                        Jenkins. Il y a même un mode de tests manuels pour vérifier qu'on ne va pas déclencher l'enfer
+                        en situation réelle.
                     </aside>
                 </section>
 
@@ -167,13 +172,13 @@
                     </blockquote>
 
                     <aside class="notes">
-                        Nosu appliquons les préconisations Bash des équipes de Google, sauf une peut-être : "si vous
+                        Nous appliquons les préconisations Bash des équipes Google, sauf une peut-être : "si vous
                         écrivez un script de plus de 100 lignes, vous devriez surement l'écrire en Python."
                     </aside>
                 </section>
 
                 <section>
-                    <p>En python!</p>
+                    <p>En Python !</p>
                     <figure>
                         <img width="60%" height="60%" src="images/dawson-triste.jpg" alt="Dawson triste"/>
                         <figcaption>
@@ -181,7 +186,8 @@
                         </figcaption>
                     </figure>
                     <aside class="notes">
-                        En python! Il est malheureusement Dawson, il n'a pas envie de faire du python.
+                        En python ! Il est malheureux Dawson, il n'a pas envie de faire du Python, il veut sortir avec
+                        Katie Holmes comme tout le monde.
                     </aside>
                 </section>
 
@@ -199,7 +205,7 @@
                 </section>
 
                 <section>
-                    <h2>Et pourtant 4796 lignes de Bash ! </h2>
+                    <h2>Et pourtant 4796 lignes de Bash ! </h2>
                     <aside class="notes">
                         Et pourtant nous avons accumulé près de 5000 lignes de Bash.
                     </aside>
@@ -209,7 +215,7 @@
                     <img width="60%" height="60%" src="images/panneau-stop.jpg" alt="Panneau stop"/>
 
                     <aside class="notes">
-                        Bash n'est pas le problème de fond!
+                        Bash n'est pas le problème de fond.
                     </aside>
                 </section>
 
@@ -217,15 +223,15 @@
                     <h2>Il faut tacler la complexité</h2>
 
                     <aside class="notes">
-                        Notre ennemi est la complexité.
+                        Notre ennemi est la complexité que nous produisons nous même.
                     </aside>
                 </section>
 
                 <section>
-                    <p>Et si Bash était un langage de programmation ?</p>
+                    <p>Et si Bash était un langage de programmation ?</p>
 
                     <aside class="notes">
-                        Et si Bash n'était pas un langage de script mais un langage de programmation comme les autres?
+                        Et si Bash n'était pas un langage de script mais un langage de programmation comme les autres ?
                     </aside>
                 </section>
 
@@ -240,18 +246,18 @@
                 </section>
 
                 <section>
-                    <h2>Clean Code, concrètement?</h2>
+                    <h2>Clean Code, concrètement ?</h2>
                     <aside class="notes">
-                        Même en Bash il est possible de respecter le principe de responsabilité unique ou d'avoir du
-                        code sans duplication et qui exprime l'intention.
+                        Il est tout à fait possible, en Bash, de respecter le principe de responsabilité unique, d'avoir
+                        du code sans duplication et qui exprime l'intention.
                     </aside>
                 </section>
 
                 <section>
-                    <h2>Un équivalent à JUnit?</h2>
+                    <h2>Un équivalent à JUnit ?</h2>
                     <img width="30%" height="30%" src="images/junit.jpg" alt="JUnit"/>
                     <aside class="notes">
-                        Par contre, existe t-il un équivalent à JUnit pour Bash?
+                        Par contre, existe t-il un équivalent à JUnit ?
                     </aside>
                 </section>
 
@@ -263,10 +269,10 @@
                 </section>
 
                 <section>
-                    <p>Je vais créer mon api de tests automatisés en Bash...</p>
+                    <p>Je vais créer mon api de tests automatisés en Bash !</p>
                     <img width="60%" height="60%" src="images/serious-cat.jpg" alt="Serious cat"/>
                     <aside class="notes">
-                        Alors j'ai décidé de créer ma propre api de tests automatisés en Bash!
+                        Alors j'ai décidé de créer ma propre api de tests automatisés en Bash !
                     </aside>
                 </section>
 
@@ -282,7 +288,7 @@
                     <aside class="notes">
                         L'objectif numéro 1 de l'API était de favoriser TDD. Mais je souhaitais aussi quelle ressemble à
                         xUnit, soit compatible avec Jenkins et respecte la notion de tests unitaires. Si en plus elle
-                        pouvait être en français comme le reste de mon code, ça serait parfait.
+                        pouvait être en français comme le reste de notre code, ça serait parfait.
                     </aside>
                 </section>
 
@@ -290,20 +296,21 @@
                     <h2>Make them <strong>first</strong></h2>
                     <ul>
                         <li><strong>F</strong>ast</li>
-                        <li><strong>I</strong>solated <span class="exclamation">!</span></li>
-                        <li><strong>R</strong>epeatable <span class="exclamation">!</span></li>
-                        <li><strong>S</strong>elf-verifying <span class="exclamation">!</span></li>
+                        <li><strong>I</strong>solated <span class="exclamation">!</span></li>
+                        <li><strong>R</strong>epeatable <span class="exclamation">!</span></li>
+                        <li><strong>S</strong>elf-verifying <span class="exclamation">!</span></li>
                         <li><strong>T</strong>imely</li>
                     </ul>
                     <aside class="notes">
                         En m'appuyant sur la définiton FIRST de test unitaire, je voulais me concentrer sur les 3 points
                         du milieu : isolé, répétable, auto-vérifiant. Isolé, est une gageure par exemple. En Bash nous
-                        pouvons facilement modifier des variables globales, créer ou détruire des arborescences.
+                        pouvons facilement modifier des variables globales, créer ou détruire des arborescences. J'ai eu
+                        mon quota de surprises désagréables.
                     </aside>
                 </section>
 
                 <section>
-                    <h2>Et donc?</h2>
+                    <h2>Et donc ?</h2>
                     <aside class="notes">
                         Et donc voici quelques exemples de l'API. Ils sont un peu édulcorés pour faciliter la
                         compréhension.
@@ -312,6 +319,9 @@
 
                 <section>
                     <h2>L'exécuteur de test</h2>
+                    <aside class="notes">
+                        Le grand stratégaire est l'exécuteur de test.
+                    </aside>
                 </section>
 
                 <section>
@@ -326,7 +336,7 @@ function executeur_executeLesFichiersDeTestDansLeRepertoire() {
 }
                     </code></pre>
                     <aside class="notes">
-                        L'exécuteur exécute tous les fichiers de tests qui respectent un certain pattern pour un
+                        L'exécuteur exécute tous les fichiers de tests qui respectent un certain motif pour un
                         répertoire donné. Il affiche le résultat global des tests et retourne un code en fonction de
                         l'exécution.
                     </aside>
@@ -365,7 +375,7 @@ function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
                     </code></pre>
                     <aside class="notes">
                         Pour une fonction de test, il l'exécute entre le setup et teardown si présents et analyse le
-                        code retour de tout ceci.
+                        code retour.
                     </aside>
                 </section>
 
@@ -388,7 +398,7 @@ function affirmation_affirmeEgalite() {
 }
                     </code></pre>
                     <aside class="notes">
-                        Voici une simple affirmation pour l'égalité.
+                        Voici une simple affirmation pour l'égalité. C'est le plus simple qui fonctionne.
                     </aside>
                 </section>
 
@@ -403,7 +413,8 @@ function affirmation_affirmeSucces() {
 }
                     </code></pre>
                     <aside class="notes">
-                        Une autre pour affirmer le succès d'une commande.
+                        Une autre pour affirmer le succès d'une commande. C'est très utile puisque les fonctions Bash ne
+                        retournent que des codes d'erreur.
                     </aside>
                 </section>
 
@@ -416,29 +427,37 @@ function affirmation_affirmeSucces() {
 
                 <section>
                     <h2>Un test unitaire</h2>
-                        <pre><code data-trim class="bash">
+                    <pre><code data-trim class="bash">
 function recupereBienLaVersionDunPom() {
-    local pom="${_ressources}/pom_1.0-SNAPSHOT.xml"
+    local pom="${_ressources}/pom_1.0.xml"
 
     local version=$(maven_recupereLaVersionDuPom "${pom}")
 
-    affirmation_affirmeEgalite "1.0-SNAPSHOT" "${version}"
+    affirmation_affirmeEgalite "1.0" "${version}"
 }
-                        </code></pre>
+                    </code></pre>
+                    <aside class="notes">
+                        Etant donné un pom.xml en version 1.0, si je demande la version de ce pom, j'obtiens bien 1.0.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Un test d'intégration</h2>
-                        <pre><code data-trim class="bash">
+                    <pre><code data-trim class="bash">
 function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
     entrepot_cloneLaBrancheDeLEntrepot "integration" "module-a"
 
-    source "${REPERTOIRE_SCRIPT}/checkout.sh" "master" "module-a"
+    source "${REPERTOIRE_SCRIPT}/checkout.sh" -p "mod*" "master"
 
     local branche="$(_recupereLaBrancheCouranteDeLEntrepot "module-a")"
     affirmation_affirmeEgalite "master" "${branche}"
 }
-                        </code></pre>
+                    </code></pre>
+                    <aside class="notes">
+                        Un exemple plus ambitieux avec un test d'intégration. Je clone l'entrepôt module-a, je demande
+                        un changement vers la branche master de tous les entrepôts qui commencent par mod et j'affirme
+                        que module-a est sur la branche master.
+                    </aside>
                 </section>
 
                 <section>
@@ -448,6 +467,10 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
                             Exemple de sortie console
                         </figcaption>
                     </figure>
+                    <aside class="notes">
+                        Et pour finir, un exemple de sortie console avec de belles couleurs et un résumé de l'exécution
+                        en bas.
+                    </aside>
                 </section>
 
                 <section>
@@ -460,6 +483,11 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
                         <li><strong>Tests</strong> : 1671 (35%)</li>
                         <li><strong>API de tests</strong> : 328 (7%)</li>
                     </ul>
+                    <aside class="notes">
+                        Quand on regarde la répartition des 5000 lignes de Bash, on s'aperçoit qu'il y a un tier de
+                        test. La couverture doit être moins bonne que sur d'autres projets mais pour des opérations
+                        proches du système, je trouve ça plutôt satisfaisant.
+                    </aside>
                 </section>
 
                 <section>
@@ -470,6 +498,11 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
                         <li><strong>Tests unitaires</strong> : 91 (13 s)</li>
                         <li><strong>Tests d'intégration</strong> : 109 (10 min)</li>
                     </ul>
+                    <aside class="notes">Voici la répartition des TU/TI. Nous avons beaucoup trop de tests d'intégration
+                        à mon goût et ils sont longs. C'est symptomatique de la programmation système. L'inversion de
+                        contrôle y est assez complexe mais pas impossible. Quoiqu'il en soit, ces tests nous assurent
+                        une certaine sérénité.
+                    </aside>
                 </section>
 
                 <section>
@@ -479,6 +512,10 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
 
                     <p><a href="http://github.com/arpinum/shebang_unit" title="shebang_unit">http://github.com/arpinum/shebang_unit</a>
                     </p>
+
+                    <aside class="notes">Pour les curieux, j'ai partagé shebang_unit sur Github. C'est la petite soeur
+                        libre de droit de l'API que je viens de présenter. Ceci conclu mon intervention. Merci.
+                    </aside>
                 </section>
             </div>
 
