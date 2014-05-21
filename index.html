@@ -17,12 +17,12 @@
         <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
         <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
 
-        <!-- For syntax highlighting -->
+        <!-- Thème utilisé par highlight.js -->
         <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
 
         <link rel="stylesheet" href="css/redefinitions.css">
 
-        <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+        <!-- Mettre 'print-pdf' dans la requête pour activer la css d'impression PDF -->
         <script>
             if (window.location.search.match(/print-pdf/gi)) {
                 var link = document.createElement('link');
@@ -40,11 +40,16 @@
     <body>
         <div class="reveal">
 
-            <!-- Any section element inside of this container is displayed as a slide -->
             <div class="slides">
                 <section>
                     <img width="100%" height="100%" src="images/ouverture-agile-france.jpg"
                          alt="Ouverture Agile France"/>
+
+                    <aside class="notes">
+                        Bonjour à tous. Je suis Michael Borde, développeur passionné chez Arpinum. Je remercie
+                        l'organisation pour ce bel évènement et je tenais à vous dire que je suis très heureux d'être
+                        parmis vous. Je vais vous parler de mon hobby du moment : les tests automatisés en Bash.
+                    </aside>
                 </section>
                 <!--<section>--><!--<h1>#!</h1>-->
 
@@ -57,6 +62,26 @@
 
                 <section>
                     <h2>Le contexte</h2>
+
+                    <aside class="notes">
+                        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if
+                        you open the speaker notes window (hit 's' on your keyboard).
+                    </aside>
+                </section>
+
+                <section>
+                    <h2>Ces 28 derniers jours</h2>
+
+                    <div>
+                        <img width="10%" height="10%" src="images/28-jours-plus-tard.jpg" alt="28 jours plus tard"/>
+                    </div>
+
+                    <ul>
+                        <li>109 entrepôts</li>
+                        <li>1812 commits</li>
+                        <li>48 auteurs actifs</li>
+                    </ul>
+
                 </section>
 
                 <section>
@@ -79,19 +104,13 @@
                 <section>
                     <h2>Mais avec un peu d'imagination</h2>
                     <ul>
-                        <li>Cloner des entrepôts</li>
-                        <li>Mettre à jour les sources</li>
-                        <li>Changer de branche</li>
-                        <li>Exécuter des commandes</li>
                         <li>Créer/supprimer des branches</li>
                         <li>Créer/supprimer des jobs Jenkins</li>
-                        <li>Lancer des builds Jenkins</li>
-                        <li>Importer un nouvel entrepôt</li>
                         <li>Lister les entrepôts à fusionner</li>
-                        <li>Préparer la livraison des projets</li>
                         <li>Réaliser la livraison des projets</li>
-                        <li>..</li>
+                        <li>...</li>
                     </ul>
+                    <p>18 vaillants scripts</p>
                 </section>
 
                 <section>
@@ -205,11 +224,11 @@
                 <section>
                     <h2>Les objectifs de l'api</h2>
                     <ul>
-                        <li>Ressembler à xUnit</li>
-                        <li>Etre en français</li>
-                        <li>Etre compatible avec l'IC</li>
                         <li>Favoriser TDD</li>
+                        <li>Compatible avec l'IC</li>
                         <li>Respecter la notion de tests unitaires</li>
+                        <li>Ressembler à xUnit</li>
+                        <li>En français</li>
                     </ul>
                 </section>
 
@@ -400,6 +419,9 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
                     } },
                     { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () {
                         hljs.initHighlightingOnLoad();
+                    } },
+                    { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function () {
+                        return !!document.body.classList;
                     } }
                 ]
             });
