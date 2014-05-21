@@ -64,8 +64,8 @@
                     <h2>Le contexte</h2>
 
                     <aside class="notes">
-                        Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if
-                        you open the speaker notes window (hit 's' on your keyboard).
+                        Je travaille sur un plateau de développement et je suis en charge, avec mon équipe, d'améliorer
+                        le quotidien de tous nos fabricants.
                     </aside>
                 </section>
 
@@ -82,15 +82,27 @@
                         <li>48 auteurs actifs</li>
                     </ul>
 
+                    <aside class="notes">
+                        Nous sommes suffisamment nombreux pour que ce travail soit aussi intéressant que compliqué.
+                    </aside>
                 </section>
 
                 <section>
                     <p>Et si nous automatisions les opérations répétitives et sensibles ?</p>
+
+                    <aside class="notes">
+                        Tout a commencé lorsque nous avons décidé d'automatiser certaines opérations répétitives et
+                        sensibles du quotidien.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Un outil simple : Bash</h2>
                     <img width="60%" height="60%" src="images/cle-a-molette.jpg" alt="Clé à molette"/>
+                    <aside class="notes">
+                        En faisant le tour de nos postes de développements et des différents serveurs, le plus simple
+                        était d'utiliser Bash.
+                    </aside>
                 </section>
 
                 <section>
@@ -99,6 +111,9 @@
                         <li>Cloner des entrepôts</li>
                         <li>Mettre à jour des sources</li>
                     </ul>
+                    <aside class="notes">
+                        3 fois rien finalement : cloner ou mettre à jour en masse des entrepôts Git.
+                    </aside>
                 </section>
 
                 <section>
@@ -108,16 +123,23 @@
                         <li>Créer/supprimer des jobs Jenkins</li>
                         <li>Lister les entrepôts à fusionner</li>
                         <li>Réaliser la livraison des projets</li>
-                        <li>...</li>
+                        <li>etc.</li>
                     </ul>
                     <p>18 vaillants scripts</p>
+                    <aside class="notes">
+                        Mais bien vite nous avons imaginé de nombreux cas d'utilisations : créer des branches ou jobs
+                        Jenkins en masse, livrer les projets de manière automatique, etc.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Et il y en a pour tout le monde</h2>
                     <img width="60%" height="60%" src="images/equipe-developpement.jpg" alt="Equipe développement"/>
 
-                    <p>Développeurs, administrateurs, livreurs, managers</p>
+                    <p>Développeurs, administrateurs, livreurs, etc.</p>
+                    <aside class="notes">
+                        Ils concernent un peu tout le monde : développeurs, administrateurs, etc.
+                    </aside>
                 </section>
 
                 <section>
@@ -129,6 +151,12 @@
                     <img width="20%" height="20%" src="images/logo-linux.png" alt="Logo Linux"/>
 
                     <p class="fragment">avec un mode de tests manuels, mais chut!</p>
+
+                    <aside class="notes">
+                        Ils sont utilisables sur un poste de développement Windows, un serveur Linux ou via un job
+                        Jenkins. Il y a même un mode test pour vérifier qu'on ne va pas déclencher l'enfer en situation
+                        réelle.
+                    </aside>
                 </section>
 
                 <section>
@@ -137,6 +165,11 @@
                         If you are writing a script that is more than 100 lines long, you should probably be writing it
                         in Python instead.
                     </blockquote>
+
+                    <aside class="notes">
+                        Nosu appliquons les préconisations Bash des équipes de Google, sauf une peut-être : "si vous
+                        écrivez un script de plus de 100 lignes, vous devriez surement l'écrire en Python."
+                    </aside>
                 </section>
 
                 <section>
@@ -147,6 +180,9 @@
                             <small>© Toute la production de Dawson's Creek</small>
                         </figcaption>
                     </figure>
+                    <aside class="notes">
+                        En python! Il est malheureusement Dawson, il n'a pas envie de faire du python.
+                    </aside>
                 </section>
 
                 <section>
@@ -155,22 +191,42 @@
                                                                                       src="images/stackoverflow.png"
                                                                                       alt="Stackoverflow"/> <img
                         width="20%" height="20%" src="images/necronomicon.jpg" alt="Necronomicon"/>
+                    <aside class="notes">
+                        Mais c'est compréhensible. Quand je regarde des exemples de code sur le net je me dis que
+                        scripter en Bash c'est un peu de chance et beaucoup de Stackoverflow. Heureusement dans les
+                        situations désespérées il reste le Nécronomicon.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Et pourtant 4796 lignes de Bash ! </h2>
+                    <aside class="notes">
+                        Et pourtant nous avons accumulé près de 5000 lignes de Bash.
+                    </aside>
                 </section>
 
                 <section>
                     <img width="60%" height="60%" src="images/panneau-stop.jpg" alt="Panneau stop"/>
+
+                    <aside class="notes">
+                        Bash n'est pas le problème de fond!
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Il faut tacler la complexité</h2>
+
+                    <aside class="notes">
+                        Notre ennemi est la complexité.
+                    </aside>
                 </section>
 
                 <section>
                     <p>Et si Bash était un langage de programmation ?</p>
+
+                    <aside class="notes">
+                        Et si Bash n'était pas un langage de script mais un langage de programmation comme les autres?
+                    </aside>
                 </section>
 
                 <section>
@@ -178,60 +234,56 @@
                     <img width="20%" height="20%" src="images/livre-tdd-by-example.jpeg" alt="TDD By Example"/> <img
                         width="20%" height="20%" src="images/livre-xp-explained.jpg" alt="XP Explained"/> <img
                         width="20%" height="20%" src="images/livre-clean-code.jpg" alt="Clean Code"/>
-                </section>
-
-                <section>
-                    <p>Certains vont me dire :</p>
-                    <blockquote class="fragment">&ldquo;MER IL ET FOU&rdquo;</blockquote>
+                    <aside class="notes">
+                        Alors je dégainerais TDD, XP et Clean Code.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Clean Code, concrètement?</h2>
-                </section>
-
-                <section>
-                    <h2>Une programmation modulaire</h2>
-
-                    <ul>
-                        <li>clone.sh</li>
-                        <li>creeLaBranche.sh</li>
-                        <li>importeDansGit.sh</li>
-                        <li>livre.sh</li>
-                        <li>...</li>
-                    </ul>
-
-                    <ul class="fragment">
-                        <li>systeme.sh</li>
-                        <li>entrepot.sh</li>
-                        <li>livraison.sh</li>
-                        <li>maven.sh</li>
-                        <li>...</li>
-                    </ul>
+                    <aside class="notes">
+                        Même en Bash il est possible de respecter le principe de responsabilité unique ou d'avoir du
+                        code sans duplication et qui exprime l'intention.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Un équivalent à JUnit?</h2>
                     <img width="30%" height="30%" src="images/junit.jpg" alt="JUnit"/>
+                    <aside class="notes">
+                        Par contre, existe t-il un équivalent à JUnit pour Bash?
+                    </aside>
                 </section>
 
                 <section>
                     <p>Bof...</p>
+                    <aside class="notes">
+                        Bof... et je ne me satisfais pas d'un bof.
+                    </aside>
                 </section>
 
                 <section>
                     <p>Je vais créer mon api de tests automatisés en Bash...</p>
                     <img width="60%" height="60%" src="images/serious-cat.jpg" alt="Serious cat"/>
+                    <aside class="notes">
+                        Alors j'ai décidé de créer ma propre api de tests automatisés en Bash!
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Les objectifs de l'api</h2>
                     <ul>
                         <li>Favoriser TDD</li>
+                        <li>Ressembler à xUnit</li>
                         <li>Compatible avec l'IC</li>
                         <li>Respecter la notion de tests unitaires</li>
-                        <li>Ressembler à xUnit</li>
                         <li>En français</li>
                     </ul>
+                    <aside class="notes">
+                        L'objectif numéro 1 de l'API était de favoriser TDD. Mais je souhaitais aussi quelle ressemble à
+                        xUnit, soit compatible avec Jenkins et respecte la notion de tests unitaires. Si en plus elle
+                        pouvait être en français comme le reste de mon code, ça serait parfait.
+                    </aside>
                 </section>
 
                 <section>
@@ -243,10 +295,19 @@
                         <li><strong>S</strong>elf-verifying <span class="exclamation">!</span></li>
                         <li><strong>T</strong>imely</li>
                     </ul>
+                    <aside class="notes">
+                        En m'appuyant sur la définiton FIRST de test unitaire, je voulais me concentrer sur les 3 points
+                        du milieu : isolé, répétable, auto-vérifiant. Isolé, est une gageure par exemple. En Bash nous
+                        pouvons facilement modifier des variables globales, créer ou détruire des arborescences.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Et donc?</h2>
+                    <aside class="notes">
+                        Et donc voici quelques exemples de l'API. Ils sont un peu édulcorés pour faciliter la
+                        compréhension.
+                    </aside>
                 </section>
 
                 <section>
@@ -255,7 +316,7 @@
 
                 <section>
                     <h2>Exécuter tous les fichiers de test</h2>
-                        <pre><code data-trim class="bash">
+                    <pre><code data-trim class="bash">
 function executeur_executeLesFichiersDeTestDansLeRepertoire() {
     local repertoire=$1
     _initialiseLExecutionDesTests
@@ -263,12 +324,17 @@ function executeur_executeLesFichiersDeTestDansLeRepertoire() {
     _afficheLeResultatDesTests
     _retourneUnCodeEnFonctionDuResultatDesTests
 }
-                        </code></pre>
+                    </code></pre>
+                    <aside class="notes">
+                        L'exécuteur exécute tous les fichiers de tests qui respectent un certain pattern pour un
+                        répertoire donné. Il affiche le résultat global des tests et retourne un code en fonction de
+                        l'exécution.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Exécuter un fichier de test</h2>
-                        <pre><code data-trim class="bash">
+                    <pre><code data-trim class="bash">
 function _executeLeFichierDeTest() {
     local fichier=$1
     source "${fichier}"
@@ -278,6 +344,10 @@ function _executeLeFichierDeTest() {
     _executeFonctionSiPresente "apresTousLesTests" "${fonctions[@]}"
 }
                     </code></pre>
+                    <aside class="notes">
+                        Pour un fichier de test, il récupère les fonctions publiques qui par convention seront les
+                        fonctions de test. Il exécute tous les tests entre les setups et teardowns globaux si présents.
+                    </aside>
                 </section>
 
                 <section>
@@ -287,23 +357,28 @@ function _executeLeFichierDeTest() {
 function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
     local fonction=$1
     shift 1
-    (
-        _executeFonctionSiPresente "avantChaqueTest" "$@" \
-        && ( ${fonction} ) \
-        && _executeFonctionSiPresente "apresChaqueTest" "$@"
-    )
+    _executeFonctionSiPresente "avantChaqueTest" "$@" \
+    && ${fonction} \
+    && _executeFonctionSiPresente "apresChaqueTest" "$@"
     _analyseLExecutionDuTest "${fonction}" $?
 }
                     </code></pre>
+                    <aside class="notes">
+                        Pour une fonction de test, il l'exécute entre le setup et teardown si présents et analyse le
+                        code retour de tout ceci.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Quelques affirmations</h2>
+                    <aside class="notes">
+                        Une API de test automatisés ne serait rien sans ses affirmations.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Affirmer l'égalité</h2>
-                        <pre><code data-trim class="bash">
+                    <pre><code data-trim class="bash">
 function affirmation_affirmeEgalite() {
     local attendu=$1
     local obtenu=$2
@@ -311,23 +386,32 @@ function affirmation_affirmeEgalite() {
       _affirmationEnErreur "Obtenu : <${obtenu}>, attendu : <${attendu}>."
     fi
 }
-                        </code></pre>
+                    </code></pre>
+                    <aside class="notes">
+                        Voici une simple affirmation pour l'égalité.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Affirmer le succés</h2>
-                        <pre><code data-trim class="bash">
+                    <pre><code data-trim class="bash">
 function affirmation_affirmeSucces() {
     ( $@ )
     if (( $? != 0 )); then
         _affirmationEnErreur "La commande a échoué au lieu de réussir."
     fi
 }
-                        </code></pre>
+                    </code></pre>
+                    <aside class="notes">
+                        Une autre pour affirmer le succès d'une commande.
+                    </aside>
                 </section>
 
                 <section>
                     <h2>Quelques exemples</h2>
+                    <aside class="notes">
+                        Quelques exemples de tests.
+                    </aside>
                 </section>
 
                 <section>
