@@ -42,23 +42,21 @@
 
             <div class="slides">
                 <section>
-                    <img width="100%" height="100%" src="images/ouverture-agile-france.jpg"
-                         alt="Ouverture Agile France"/>
+                    <h1>#!</h1>
 
+                    <h3>Tests automatisés en Bash</h3>
+
+                    <p>
+                        <small><a href="https://twitter.com/michael_borde">Michael Borde</a> / <a
+                                href="http://www.arpinum.fr">www.arpinum.fr</a> / <a href="http://twitter.com/arpinum">@arpinum</a>
+                        </small>
+                    </p>
+                    <img width="10%" height="10%" src="images/logo-arpinum.png" alt="Arpinum"/>
                     <aside class="notes">
-                        Bonjour à tous. Je suis Michael Borde, développeur passionné chez Arpinum. Je remercie
-                        l'organisation pour ce bel évènement. Je vais vous parler de mon hobby du moment : les tests
-                        automatisés en Bash.
+                        Bonjour à tous et merci d'être présent. Je suis Michael Borde, développeur passionné chez
+                        Arpinum. Je vais vous parler de mon hobby du moment : les tests automatisés en Bash.
                     </aside>
                 </section>
-                <!--<section>--><!--<h1>#!</h1>-->
-
-                <!--<h3>Tests automatisés en Bash</h3>-->
-
-                <!--<p>--><!--<small><a href="https://twitter.com/michael_borde">Michael Borde</a> / <a-->
-                <!--href="http://www.arpinum.fr">www.arpinum.fr</a> / <a href="http://twitter.com/arpinum">@arpinum</a>-->
-                <!--</small>--><!--</p>-->
-                <!--<img width="10%" height="10%" src="images/logo-arpinum.png" alt="Arpinum"/>--><!--</section>-->
 
                 <section>
                     <h2>Le contexte</h2>
@@ -133,7 +131,8 @@
                     <p>18 vaillants scripts</p>
                     <aside class="notes">
                         Mais bien vite nous avons imaginé de nombreux cas d'utilisations : créer des branches ou jobs
-                        Jenkins en masse, livrer les projets de manière automatique, etc.
+                        Jenkins en masse, livrer les projets de manière automatique, etc. Au final nous avons un peu
+                        moins de 20 scripts.
                     </aside>
                 </section>
 
@@ -548,6 +547,17 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
                     } }
                 ]
             });
+
+            window.addEventListener("mousedown", handleClick, false);
+            window.addEventListener("contextmenu", function (e) {
+                e.preventDefault();
+            }, false);
+
+            function handleClick(e) {
+                e.preventDefault();
+                if (e.button === 0) Reveal.next();
+                if (e.button === 2) Reveal.prev();
+            }
         </script>
 
     </body>
