@@ -347,7 +347,7 @@ function executeur_executeLesFichiersDeTestDansLeRepertoire() {
 function _executeLeFichierDeTest() {
   local fichier=$1
   source "${fichier}"
-  local fonctions=($(_fonctionsPubliquesDansLeFichier "${fichier}"))
+  local fonctions=("$(_fonctionsPubliquesDansLeFichier "${fichier}")")
   _executeFonctionSiPresente "avantTousLesTests" "${fonctions[@]}"
   _executeTousLesTests "${fonctions[@]}"
   _executeFonctionSiPresente "apresTousLesTests" "${fonctions[@]}"
