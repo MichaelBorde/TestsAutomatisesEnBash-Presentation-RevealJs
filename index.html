@@ -154,7 +154,7 @@
                                                                                              alt="Logo Jenkins">
           <img width="20%" height="20%" src="images/logo-linux.png" alt="Logo Linux">
 
-          <p class="fragment">avec un mode de tests manuels, mais chut!</p>
+          <p>avec un mode de tests manuels, mais chut!</p>
 
           <aside class="notes">
             Ils sont utilisables sur un poste de développement Windows, un serveur Linux ou via un job
@@ -407,7 +407,7 @@ function affirmation_affirmeEgalite() {
 function affirmation_affirmeSucces() {
   ( $@ )
   if (( $? != 0 )); then
-      _affirmationEnErreur "La commande a échoué au lieu de réussir."
+    _affirmationEnErreur "La commande a échoué au lieu de réussir."
   fi
 }
           </code></pre>
