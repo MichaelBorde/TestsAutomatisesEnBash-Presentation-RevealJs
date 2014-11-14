@@ -12,10 +12,10 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
-    <link rel="stylesheet" href="reveal.js/css/reveal.min.css">
-    <link rel="stylesheet" href="reveal.js/css/theme/default.css" id="theme">
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/beige.css" id="theme">
 
     <!-- Thème utilisé par highlight.js -->
     <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
@@ -24,13 +24,11 @@
 
     <!-- Mettre 'print-pdf' dans la requête pour activer la css d'impression PDF -->
     <script>
-      if (window.location.search.match(/print-pdf/gi)) {
-        var link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        link.href = 'reveal.js/css/print/pdf.css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-      }
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
     </script>
 
     <!--[if lt IE 9]>
@@ -42,9 +40,9 @@
 
       <div class="slides">
         <section>
-          <h1>#!</h1>
+          <h1> #! TDD en Bash </h1>
 
-          <h3>Tests automatisés en Bash</h3>
+          <h3>(Serious business)</h3>
 
           <p>
             <small><a href="http://michaelborde.fr">Michael Borde</a> / <a href="http://twitter.com/michael_borde">@michael_borde</a>
@@ -54,32 +52,43 @@
           <img width="10%" height="10%" src="images/logo-arpinum.png" alt="Arpinum">
           <aside class="notes">
             Bonjour à tous et merci d'être présent. Je suis Michael Borde, développeur passionné chez
-            Arpinum. Je vais vous parler de mon hobby du moment : les tests automatisés en Bash.
+            Arpinum. Je vais vous parler d'un hobby peu recommandable : les tests automatisés en Bash.
           </aside>
         </section>
 
         <section>
           <h2>Le contexte</h2>
 
+          <figure>
+            <img width="60%" height="60%" src="images/jla.jpg" alt="JLA">
+            <figcaption>
+              <small>© DC Comics</small>
+            </figcaption>
+          </figure>
           <aside class="notes">
-            Je travaille sur un plateau de développement et je suis en charge, avec mon équipe, d'améliorer
-            le quotidien de tous les fabricants.
+            Il y a peu, je travaillais sur un plateau de développement et j'étais en charge, avec mon équipe,
+            d'améliorer le quotidien de tous les fabricants. Ca en jette non?
           </aside>
         </section>
 
         <section>
-          <h2>Ces 28 derniers jours</h2>
+          <h2>Quelques chiffres</h2>
 
-          <div>
-            <img width="10%" height="10%" src="images/28-jours-plus-tard.jpg" alt="28 jours plus tard">
-          </div>
           <ul>
             <li>119 entrepôts</li>
-            <li>4566 commits</li>
+            <li>2,3 Millions de lignes de Java</li>
+            <li>282 projets Maven</li>
+            <li>4566 commits / mois</li>
             <li>52 auteurs actifs</li>
           </ul>
+          <figure>
+            <img width="20%" height="20%" src="images/picsou.jpg" alt="Picsou">
+            <figcaption>
+              <small>© Walt Disney</small>
+            </figcaption>
+          </figure>
           <aside class="notes">
-            Nous sommes suffisamment nombreux pour que ce travail soit aussi intéressant que compliqué.
+            Les développeurs sont suffisamment nombreux pour que ce travail soit aussi intéressant que compliqué.
           </aside>
         </section>
 
@@ -91,10 +100,45 @@
         </section>
 
         <section>
+          <h2>L'ère ClearCase</h2>
+
+          <figure>
+            <img width="60%" height="60%" src="images/monsieur-lent.png" alt="Monsieur Lent">
+            <figcaption>
+              <small>© Roger Hargreaves</small>
+            </figcaption>
+          </figure>
+          <aside class="notes">
+            Avant il y avait ClearCase, mais ça c'était avant. ClearCase c'est Monsieur Lent, il fait des choses
+            parfois, mais qu'est-ce qu'il nous ralenti! Surtout quand il faut faire appel à un service externe pour
+            faire la moindre opération d'administration... Mais ça c'est un problème d'organisation pas de SCM
+            :)
+          </aside>
+        </section>
+
+        <section>
+          <h2>Puis l'ère du possible avec Git</h2>
+
+          <figure>
+            <img width="60%" height="60%" src="images/sharknado.gif" alt="Sharknado">
+            <figcaption>
+              <small>© Sharknado</small>
+            </figcaption>
+          </figure>
+          </figure>
+
+          <aside class="notes">
+            Un beau jour, face à tout ce gâchis et sous l'impulsion d'un manager, nous avons un peu contourné les règles
+            pour migrer nos sources sur Git. Et là tout devint possible, y compris se faire bouffer par un requin en
+            prenant l'avion pour Agile Grenoble!
+          </aside>
+        </section>
+
+        <section>
           <p>Et si nous automatisions les opérations répétitives et sensibles ?</p>
 
           <aside class="notes">
-            Tout a commencé lorsque nous avons décidé d'automatiser certaines opérations répétitives et
+            Puisque c'était possible, nous avons alors décidé d'automatiser certaines opérations répétitives et
             sensibles du quotidien.
           </aside>
         </section>
@@ -164,6 +208,23 @@
         </section>
 
         <section>
+          <h2>Deux exemples</h2>
+
+          <pre><code class="bash">
+./execute -p "*reference*" -y jar -b integration "mvn clean install"
+
+./assigne-version -c auto "3.4.2-SNAPSHOT"
+          </code></pre>
+          <aside class="notes">
+            Je vous donne un exemple de script qu'il m'arrive d'utiliser plusieurs fois par jours. Pour tous les projets
+            qui s'appellent plus ou moins "reference", de type "jar" et sur la branche "integration", exécute la
+            commande "mvn clean install".
+            Et en dessous un autre script plus malin. Pour tous les projets dont le cycle de vie est géré en
+            "automatique", assigne la version "3.4.2-SNAPSHOT".
+          </aside>
+        </section>
+
+        <section>
           <h2>Les conseils de Google</h2>
           <blockquote>
             If you are writing a script that is more than 100 lines long, you should probably be writing it
@@ -171,7 +232,7 @@
           </blockquote>
 
           <aside class="notes">
-            Nous appliquons les préconisations Bash des équipes Google, sauf une peut-être : "si vous
+            Nous avons appliqué les préconisations Bash des équipes Google, sauf une peut-être : "si vous
             écrivez un script de plus de 100 lignes, vous devriez surement l'écrire en Python."
           </aside>
         </section>
@@ -204,7 +265,21 @@
         </section>
 
         <section>
-          <h2>Et pourtant 4796 lignes de Bash ! </h2>
+          <h2>Un exemple de Bash</h2>
+
+          <p><a href="https://github.com/creationix/nvm" title="nvm">https://github.com/creationix/nvm</a></p>
+
+          <p>
+            <small>(Node Version Manager - Simple bash script to manage multiple active node.js versions)</small>
+          </p>
+          <aside class="notes">
+            Pour se donner une petite idée, nous allons regarder le code d'un "simple script bash pour gérer les
+            versions de Node.js".
+          </aside>
+        </section>
+
+        <section>
+          <h2>Nous avons 4796 lignes de Bash ! </h2>
           <aside class="notes">
             Et pourtant nous avons accumulé près de 5000 lignes de Bash.
           </aside>
@@ -263,7 +338,7 @@
         <section>
           <p>Bof...</p>
           <aside class="notes">
-            Bof... et je ne me satisfais pas d'un bof.
+            Après avoir regardé des projets comme Bats ou ShUnit : bof... et je ne me satisfait pas d'un bof!
           </aside>
         </section>
 
@@ -271,7 +346,7 @@
           <p>Je vais créer mon api de tests automatisés en Bash !</p>
           <img width="60%" height="60%" src="images/serious-cat.jpg" alt="Serious cat">
           <aside class="notes">
-            Alors j'ai décidé de créer ma propre api de tests automatisés en Bash !
+            Alors j'ai décidé de créer ma propre api de tests automatisés en Bash ! Serious Business !
           </aside>
         </section>
 
@@ -325,9 +400,9 @@
 
         <section>
           <h2>Exécuter tous les fichiers de test</h2>
-          <pre><code data-trim class="bash">
+          <pre><code class="bash">
 function executeur_executeLesFichiersDeTestDansLeRepertoire() {
-  local repertoire=$1
+  local repertoire="$1"
   _initialiseLExecutionDesTests
   _executeTousFichiersDeTest "${repertoire}" "*Test.sh"
   _afficheLeResultatDesTests
@@ -343,9 +418,9 @@ function executeur_executeLesFichiersDeTestDansLeRepertoire() {
 
         <section>
           <h2>Exécuter un fichier de test</h2>
-          <pre><code data-trim class="bash">
+          <pre><code class="bash">
 function _executeLeFichierDeTest() {
-  local fichier=$1
+  local fichier="$1"
   source "${fichier}"
   local fonctions=("$(_fonctionsPubliquesDansLeFichier "${fichier}")")
   _executeFonctionSiPresente "avantTousLesTests" "${fonctions[@]}"
@@ -362,9 +437,9 @@ function _executeLeFichierDeTest() {
         <section>
           <h2>Exécuter une fonction de test</h2>
 
-          <pre><code data-trim class="bash">
+          <pre><code class="bash">
 function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
-  local fonction=$1
+  local fonction="$1"
   shift 1
   _executeFonctionSiPresente "avantChaqueTest" "$@" \
   && ${fonction} \
@@ -387,12 +462,12 @@ function _executeLaFonctionAuMilieuDuSetupEtTeardown() {
 
         <section>
           <h2>Affirmer l'égalité</h2>
-          <pre><code data-trim class="bash">
+          <pre><code class="bash">
 function affirmation_affirmeEgalite() {
-  local attendu=$1
-  local obtenu=$2
+  local attendu="$1"
+  local obtenu="$2"
   if [[ "${attendu}" != "${obtenu}" ]]; then
-    _affirmationEnErreur "Obtenu : <${obtenu}>, attendu : <${attendu}>."
+    _affirmationEnErreur "Obtenu : ${obtenu}, attendu : ${attendu}."
   fi
 }
           </code></pre>
@@ -403,7 +478,7 @@ function affirmation_affirmeEgalite() {
 
         <section>
           <h2>Affirmer le succés</h2>
-          <pre><code data-trim class="bash">
+          <pre><code class="bash">
 function affirmation_affirmeSucces() {
   ( $@ )
   if (( $? != 0 )); then
@@ -426,11 +501,11 @@ function affirmation_affirmeSucces() {
 
         <section>
           <h2>Un test unitaire</h2>
-          <pre><code data-trim class="bash">
+          <pre><code class="bash">
 function recupereBienLaVersionDunPom() {
   local pom="${_ressources}/pom_1.0.xml"
 
-  local version=$(maven_recupereLaVersionDuPom "${pom}")
+  local version="$(maven_recupereLaVersionDuPom "${pom}")"
 
   affirmation_affirmeEgalite "1.0" "${version}"
 }
@@ -442,11 +517,11 @@ function recupereBienLaVersionDunPom() {
 
         <section>
           <h2>Un test d'intégration</h2>
-          <pre><code data-trim class="bash">
+          <pre><code class="bash">
 function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
   entrepot_cloneLaBrancheDeLEntrepot "integration" "module-a"
 
-  source "${REPERTOIRE_SCRIPT}/checkout.sh" -p "mod*" "master"
+  source "${REPERTOIRE_SCRIPT}/checkout" -p "mod*" "master"
 
   local branche="$(_recupereLaBrancheCouranteDeLEntrepot "module-a")"
   affirmation_affirmeEgalite "master" "${branche}"
@@ -475,13 +550,38 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
         <section>
           <h2>Reprenons les statistiques</h2>
 
-          <p>Lignes de code Bash :</p>
-          <ul>
-            <li><strong>Total</strong> : 4796 (100%)</li>
-            <li><strong>Production</strong> : 2797 (58%)</li>
-            <li><strong>Tests</strong> : 1671 (35%)</li>
-            <li><strong>API de tests</strong> : 328 (7%)</li>
-          </ul>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Lignes</th>
+                <th>%</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Production</td>
+                <td>2797</td>
+                <td>58%</td>
+              </tr>
+              <tr>
+                <td>Tests</td>
+                <td>1671</td>
+                <td>35%</td>
+              </tr>
+              <tr>
+                <td>API de tests</td>
+                <td>328</td>
+                <td>7%</td>
+              </tr>
+              <tr>
+                <td><strong>Total</strong></td>
+                <td>4796</td>
+                <td>100%</td>
+              </tr>
+            </tbody>
+          </table>
+
           <aside class="notes">
             Quand on regarde la répartition des 5000 lignes de Bash, on s'aperçoit qu'il y a un tier de
             test. La couverture doit être moins bonne que sur d'autres projets mais pour des opérations
@@ -492,11 +592,27 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
         <section>
           <h2>Et pour le fun</h2>
 
-          <p>Nombre de tests (temps) :</p>
-          <ul>
-            <li><strong>Tests unitaires</strong> : 91 (13 s)</li>
-            <li><strong>Tests d'intégration</strong> : 109 (10 min)</li>
-          </ul>
+          <table>
+            <thead>
+              <tr>
+                <th></th>
+                <th>Nombre</th>
+                <th>Temps</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Tests unitaires</td>
+                <td>91</td>
+                <td>13 s</td>
+              </tr>
+              <tr>
+                <td>Tests d'intégration</td>
+                <td>109</td>
+                <td>10 min</td>
+              </tr>
+            </tbody>
+          </table>
           <aside class="notes">Voici la répartition des TU/TI. Nous avons beaucoup trop de tests d'intégration
             à mon goût et ils sont longs. C'est symptomatique de la programmation système. L'inversion de
             contrôle y est assez complexe mais pas impossible. Quoiqu'il en soit, ces tests nous assurent
@@ -520,7 +636,7 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
     </div>
 
     <script src="reveal.js/lib/js/head.min.js"></script>
-    <script src="reveal.js/js/reveal.min.js"></script>
+    <script src="reveal.js/js/reveal.js"></script>
 
     <script>
 
@@ -535,16 +651,21 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
         transition: Reveal.getQueryHash().transition || 'none',
 
         dependencies: [
-          { src: 'reveal.js/lib/js/classList.js', condition: function () {
+          {
+            src: 'reveal.js/lib/js/classList.js', condition: function () {
             return !document.body.classList;
-          } },
-          { src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () {
+          }
+          },
+          {
+            src: 'reveal.js/plugin/highlight/highlight.js', async: true, callback: function () {
             hljs.initHighlightingOnLoad();
-          } },
-          { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function () {
+          }
+          },
+          {
+            src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function () {
             return !!document.body.classList;
-          } }
-        ]
+          }
+          }]
       });
 
       window.addEventListener("mousedown", handleClick, false);
