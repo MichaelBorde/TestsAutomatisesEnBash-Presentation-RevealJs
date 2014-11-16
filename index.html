@@ -51,8 +51,9 @@
           </p>
           <img width="10%" height="10%" src="images/logo-arpinum.png" alt="Arpinum">
           <aside class="notes">
-            Bonjour à tous et merci d'être présent. Je suis Michael Borde, développeur passionné chez Arpinum. Je vais
-            vous parler d'un hobby peu recommandable : les tests automatisés en Bash.
+            Bonjour à tous et merci d'être présent. Je suis Michael Borde, développeur passionné chez Arpinum. Nous
+            sommes un atelier logiciel bordelais et nous travaillons pour des clients sympas. Je vais vous parler d'un
+            hobby peu recommandable : les tests automatisés en Bash.
           </aside>
         </section>
 
@@ -67,7 +68,7 @@
           </figure>
           <aside class="notes">
             Il y a peu, je travaillais sur un plateau de développement et j'étais en charge, avec mon équipe,
-            d'améliorer le quotidien de tous les fabricants. Ca en jette non?
+            d'améliorer le quotidien de tous les développeurs. Ca en jette non?
           </aside>
         </section>
 
@@ -88,7 +89,8 @@
             </figcaption>
           </figure>
           <aside class="notes">
-            Les développeurs sont suffisamment nombreux pour que ce travail soit aussi intéressant que compliqué.
+            Ils étaient suffisamment nombreux pour que ce travail soit aussi intéressant que compliqué. Nous avions, par
+            exemple, un peu moins de 300 projets sur une centaine d'entrepôts.
           </aside>
         </section>
 
@@ -110,15 +112,15 @@
           </figure>
           <aside class="notes">
             Avant il y avait ClearCase, mais ça c'était avant. ClearCase c'est Monsieur Lent, il fait des choses
-            parfois, mais qu'est-ce qu'il nous ralenti! Surtout quand il faut faire appel à un service externe pour
-            faire la moindre opération d'administration... Mais ça c'est un problème d'organisation pas de SCM :)
+            parfois, mais qu'est-ce qu'il est lent! Surtout quand il faut faire appel à un autre département pour faire
+            la moindre opération d'administration... Mais ça c'est un problème d'organisation pas de SCM :)
           </aside>
         </section>
 
         <section>
           <h2>Puis l'ère du possible avec Git</h2>
 
-          <figure>
+          <figure class="fragment">
             <img width="60%" height="60%" src="images/sharknado.gif" alt="Sharknado">
             <figcaption>
               <small>© Sharknado</small>
@@ -141,9 +143,8 @@
           </aside>
         </section>
 
-        <section>
+        <section data-background="images/cle-a-molette.jpg" class="image-en-fond">
           <h2>Un outil simple : Bash</h2>
-          <img width="60%" height="60%" src="images/cle-a-molette.jpg" alt="Clé à molette">
           <aside class="notes">
             En faisant le tour de nos postes de développements et des différents serveurs, le plus simple était
             d'utiliser Bash.
@@ -272,7 +273,7 @@
             <small>(Node Version Manager - Simple bash script to manage multiple active node.js versions)</small>
           </p>
           <aside class="notes">
-            Pour se donner une petite idée, nous allons regarder le code d'un "simple script bash pour gérer les
+            Pour se donner une petite idée, nous allons regarder le code d'un "script bash simple pour gérer les
             versions de Node.js".
           </aside>
         </section>
@@ -337,7 +338,7 @@
         <section>
           <p>Bof...</p>
           <aside class="notes">
-            Après avoir regardé des projets comme Bats ou ShUnit : bof... et je ne me satisfait pas d'un bof!
+            Après avoir regardé des projets comme Bats ou ShUnit, je n'étais pas beaucoup emballé!
           </aside>
         </section>
 
@@ -481,7 +482,8 @@ function affirmation_affirmeEgalite() {
 }
           </code></pre>
           <aside class="notes">
-            Voici une affirmation triviale pour l'égalité. C'est le plus simple qui fonctionne.
+            Voici une affirmation triviale pour l'égalité. C'est le plus simple qui fonctionne. J'affirme que le
+            résultat obtenu correspond au résultat attendu. Sinon j'échoue avec un message d'erreur sympa.
           </aside>
         </section>
 
@@ -520,7 +522,12 @@ function recupereBienLaVersionDunPom() {
 }
           </code></pre>
           <aside class="notes">
-            Etant donné un pom.xml en version 1.0, si je demande la version de ce pom, j'obtiens bien 1.0.
+            Un premier test unitaire qui concerne le module dédié à Maven. Etant donné un pom.xml en version 1.0, si je
+            demande la version de ce pom, j'obtiens bien 1.0. Pour ceux qui ne connaissent pas Maven, un pom est un
+            descripteur XML à l'intérieur duquel on trouve une propriété version.
+            On remarque qu'il est possible en Bash de respecter le Arrange Act Assert pour améliorer la lisibilité des
+            tests. L'exemple ici est trivial mais il est toujours possible de faire des extractions de fonctions pour
+            les cas plus complexes.
           </aside>
         </section>
 
@@ -537,9 +544,9 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
 }
           </code></pre>
           <aside class="notes">
-            Un exemple plus ambitieux avec un test d'intégration. Je clone l'entrepôt module-a, je demande
-            un changement vers la branche master de tous les entrepôts qui commencent par mod et j'affirme
-            que module-a est sur la branche master.
+            Un exemple plus ambitieux avec un test d'intégration. Je clone l'entrepôt module-a sur la branche
+            integration, je demande un changement vers la branche master de tous les entrepôts qui commencent par mod et
+            j'affirme que module-a est sur la branche master.
           </aside>
         </section>
 
@@ -551,8 +558,7 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
             </figcaption>
           </figure>
           <aside class="notes">
-            Et pour finir, un exemple de sortie console avec de belles couleurs et un résumé de l'exécution
-            en bas.
+            Et pour finir, un exemple de sortie console avec de belles couleurs et un résumé de l'exécution en bas.
           </aside>
         </section>
 
@@ -592,9 +598,9 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
           </table>
 
           <aside class="notes">
-            Quand on regarde la répartition des 5000 lignes de Bash, on s'aperçoit qu'il y a un tier de
-            test. La couverture doit être moins bonne que sur d'autres projets mais pour des opérations
-            proches du système, je trouve ça plutôt satisfaisant.
+            Quand on regarde la répartition des 5000 lignes de Bash, on s'aperçoit qu'il y a un tier de test. La
+            couverture doit être moins bonne que sur d'autres projets mais pour des opérations proches du système, je
+            trouve ça plutôt satisfaisant.
           </aside>
         </section>
 
@@ -624,7 +630,7 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
           </table>
           <aside class="notes">Voici la répartition des TU/TI. Nous avons beaucoup trop de tests d'intégration à mon
             goût et ils sont longs. C'est symptomatique de la programmation système. L'inversion de contrôle y est assez
-            complexe mais pas impossible. Quoiqu'il en soit, ces tests nous assurent une certaine sérénité.
+            complexe mais pas impossible. Quoiqu'il en soit, ces tests nous assuraient une certaine sérénité.
           </aside>
         </section>
 
@@ -640,7 +646,7 @@ function ilEstPossibleDeChangerLaBrancheDUnEntrepot() {
           <p><a href="http://github.com/arpinum/shebang_unit" title="shebang_unit">http://github.com/arpinum/shebang_unit</a>
           </p>
           <aside class="notes">Ensuite nacquit <strong>shebang_unit</strong> que j'ai partagé sur Github. C'est la
-            petite soeur libre de droit de l'API que je viens de présenter.
+            petite soeur libre de droit et en Anglais de l'API que je viens de présenter. Nous allons un peu l'étudier.
           </aside>
         </section>
 

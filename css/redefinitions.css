@@ -8,6 +8,10 @@ span.exclamation {
   border: 0;
 }
 
-.reveal section.image-en-fond p, .reveal section.image-en-fond a {
-  color: darkviolet;
+.reveal section.image-en-fond p,
+.reveal section.image-en-fond a,
+.reveal section.image-en-fond h1,
+.reveal section.image-en-fond h2,
+.reveal section.image-en-fond h3 {
+  color: orangered;
 }
