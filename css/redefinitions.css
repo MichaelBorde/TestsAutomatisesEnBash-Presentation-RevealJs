@@ -9,9 +9,15 @@ span.exclamation {
 }
 
 .reveal section.image-en-fond p,
-.reveal section.image-en-fond a,
 .reveal section.image-en-fond h1,
 .reveal section.image-en-fond h2,
 .reveal section.image-en-fond h3 {
-  color: orangered;
+  color: #fff;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.7);
+  padding: 10px;
+}
+
+.reveal section.image-en-fond a {
+  color: snow;
 }
