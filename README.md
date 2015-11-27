@@ -12,4 +12,4 @@ Nous verrons dans ce modeste retour d’expérience que peu importe le langage o
 Pour la consulter en ligne : [cliquer ici]. Utiliser espace ou gauche/droite pour naviguer.
 
 
-[cliquer ici]: http://michaelborde.github.io/TestsAutomatisesEnBash-Presentation-RevealJs
+[cliquer ici]: http://michaelborde.fr/TestsAutomatisesEnBash-Presentation-RevealJs
