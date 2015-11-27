@@ -1,5 +1,4 @@
-Tests automatisés en Bash
-===================================
+# Tests automatisés en Bash
 
 Tout a commencé lorsque nous avons développé quelques scripts inoffensifs qu’il ne fallait surtout pas nourrir après minuit. Ces petites bêtes ne servaient qu’à manipuler notre centaine d’entrepôts Git et nous ne les prenions pas vraiment au sérieux.
 
